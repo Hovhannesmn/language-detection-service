@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package language_detection;
+
+option go_package = "maf_validator/proto/language_detection";
+
+// LanguageDetectionService provides language detection capabilities
+service LanguageDetectionService {
+  // DetectLanguage detects the dominant language of the input text
+  rpc DetectLanguage(DetectLanguageRequest) returns (DetectLanguageResponse);
+}
+
+// DetectLanguageRequest contains the text to analyze
+message DetectLanguageRequest {
+  string text = 1;           // Text content to analyze
+  string document_id = 2;    // Optional document identifier for tracking
+  map<string, string> metadata = 3; // Optional metadata
+}
+
+// DetectLanguageResponse contains the detected language information
+message DetectLanguageResponse {
+  string language_code = 1;    // Detected language code (e.g., "en-US", "es-ES")
+  float confidence = 2;        // Confidence score (0.0 to 1.0)
+  repeated LanguageAlternative alternatives = 3; // Alternative language detections
+  string document_id = 4;      // Document identifier (if provided)
+  ProcessingMetadata metadata = 5; // Processing metadata
+}
+
+// LanguageAlternative represents alternative language detection results
+message LanguageAlternative {
+  string language_code = 1;    // Alternative language code
+  float confidence = 2;        // Confidence score for this alternative
+}
+
+// ProcessingMetadata contains information about the processing
+message ProcessingMetadata {
+  int64 processing_time_ms = 1;  // Processing time in milliseconds
+  string service_version = 2;    // Service version
+  string model_version = 3;      // Language detection model version
+  string provider = 4;           // Provider used (e.g., "aws-comprehend", "fallback")
+}
+
