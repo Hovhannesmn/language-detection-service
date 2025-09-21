@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   language-detection-service:
+    container_name: language-detection-service   # <-- fixed short name
     build:
       context: .
       dockerfile: Dockerfile
@@ -20,9 +21,3 @@ services:
       - MODEL_VERSION=${MODEL_VERSION:-1.0.0}
       - SHUTDOWN_TIMEOUT_SECONDS=${SHUTDOWN_TIMEOUT_SECONDS:-30}
     restart: unless-stopped
-    networks:
-      - language-detection-network
-
-networks:
-  language-detection-network:
-    driver: bridge
