@@ -4,10 +4,10 @@
 
 # Generate Go code from protobuf definitions
 proto:
-	mkdir -p pb-service && protoc \
+	mkdir -p pb && protoc \
 		-I=proto \
-		--go_out=pb-service --go_opt=paths=source_relative \
-		--go-grpc_out=pb-service --go-grpc_opt=paths=source_relative \
+		--go_out=pb --go_opt=paths=source_relative \
+		--go-grpc_out=pb --go-grpc_opt=paths=source_relative \
 		proto/language_detection.proto
 
 # Clean generated files
