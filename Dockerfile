@@ -11,8 +11,8 @@ RUN apk add --no-cache git ca-certificates tzdata
 # Copy go mod files
 COPY go.mod go.sum ./
 
-# Copy ld-proto directory (needed for replace directive)
-COPY ld-proto ./ld-proto
+# Copy ld_proto directory (needed for replace directive)
+COPY ld_proto ./ld_proto
 
 # Download dependencies
 RUN go mod download
@@ -39,8 +39,8 @@ WORKDIR /app
 # Copy binary from builder stage
 COPY --from=builder /app/language-detection-service .
 
-# Copy ld-proto directory (if needed for runtime)
-COPY --from=builder /app/ld-proto ./ld-proto
+# Copy ld_proto directory (if needed for runtime)
+COPY --from=builder /app/ld_proto ./ld_proto
 
 # Change ownership to non-root user
 RUN chown -R appuser:appgroup /app
