@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/health/grpc_health_v1"
 
-	pb "github.com/hovman/ld-proto/pb-service/proto"
+	pb "github.com/hovman/ld-proto/pb"
 	"language-detection-service/internal/language_detection/domain"
 )
 
