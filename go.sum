@@ -1,3 +1,5 @@
+github.com/Hovhannesmn/ld_proto v1.0.1 h1:gZbXM/4GUDNjbUmvlrPN25X0ZPbrD9dcaD4xDlC4Vuw=
+github.com/Hovhannesmn/ld_proto v1.0.1/go.mod h1:JiNyH7X6McqoDtoJ0x06Xey0+rvrllC2eqPALyIM11g=
 github.com/aws/aws-sdk-go v1.55.8 h1:JRmEUbU52aJQZ2AjX4q4Wu7t4uZjOu71uyNmaWlUkJQ=
 github.com/aws/aws-sdk-go v1.55.8/go.mod h1:ZkViS9AqA6otK+JBBNH2++sx1sgxrPKcSzPPvQkUtXk=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
